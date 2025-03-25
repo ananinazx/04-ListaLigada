@@ -167,12 +167,14 @@ if (aux == NULL) // nao encontrado
 {
 cout « "Elemento" « valor « " nao encontrado. \n";
 return;
-{
+}
 if anterior == NULL)
 {
 primeiro = aux-›prox; //atualiza o primeiro nó
 }
-else anterior->prox = aux-›prox; //remove o nó
+else
+{
+anterior->prox = aux-›prox; //remove o nó
 }
 free(aux); //libera memória
 cout « "Elemento " « valor « " excluido com sucesso. \n";
