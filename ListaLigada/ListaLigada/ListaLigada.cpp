@@ -73,7 +73,7 @@ void menu()
 void inicializar()
 {
 
-	// se a lista j� possuir elementos
+	// se a lista já possuir elementos
 	// libera a memoria ocupada
 	NO* aux = primeiro;
 	while (aux != NULL) {
@@ -145,18 +145,63 @@ void inserirElemento()
 
 void excluirElemento()
 {
+if (primeiro == NULL)
+{
+cout « "Lista vazia! Nao ha elementos para excluir. \n";
+return;
+}
 	
+int valor;
+cout « "Digite o valor a ser excluido: ";
+cin >> valor;
+	
+NO* aux = posicaoElemento(valor);
+NO* anterior = NULL;
+	
+while aux != NULL && aux->valor |= valor) // busca elemento
+{
+anterior = aux:
+aux = aux->prox;
+}
+if (aux == NULL) // nao encontrado
+{
+cout « "Elemento" « valor « " nao encontrado. \n";
+return;
+{
+if anterior == NULL)
+{
+primeiro = aux-›prox; //atualiza o primeiro nó
+}
+else anterior->prox = aux-›prox; //remove o nó
+}
+free(aux); //libera memória
+cout « "Elemento " « valor « " excluido com sucesso. \n";
+return;	
 }
 
 void buscarElemento()
 {
+int valor;
+cout « "Digite um valor a ser buscado: ";
+cin >> valor;
 	
+NO* resultado = posicaoElemento(valor);
+
+if (resultado != NULL)
+{
+cout « "Elemento " « valor « " encontrado. \n";
+return;
+}
+else
+{
+cout « "Elemento" « valor « " nao encontrado. \n";
+return;	
 }
 
 
 
 // retorna um ponteiro para o elemento buscado
-// ou NULL se o elemento n�o estiver na lista
+// ou NULL se o elemento não estiver na lista
 NO* posicaoElemento(int numero)
 {
 	NO* aux = primeiro;
